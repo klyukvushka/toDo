@@ -4,7 +4,7 @@ import Button from "../Button/Button";
 
 const Form: React.FC = () => {
   return (
-    <>
+    <form className="form">
       <Input
         className="form-input"
         label="Enter your todo"
@@ -14,7 +14,7 @@ const Form: React.FC = () => {
         placeholder="Enter your todo"
       />
       <Button className="btn-succes">Add</Button>
-    </>
+    </form>
   );
 };
 
