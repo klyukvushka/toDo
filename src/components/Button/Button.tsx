@@ -5,7 +5,7 @@ import "./Button.scss";
 
 type Props = {
   className: string;
-  children: string;
+  children: string | React.ReactNode;
 };
 
 const Button: React.FC<Props> = props => {

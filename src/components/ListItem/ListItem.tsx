@@ -3,27 +3,30 @@ import classNames from "classnames";
 
 import Input from "../Input/Input";
 import Button from "../Button/Button";
+import icon from "../../icons/bin.png";
 
 type Props = {
   className?: string;
-  children: string;
 };
 
 const ListItem: React.FC<Props> = props => {
-  const { className, children } = props;
+  const { className } = props;
   const classes = classNames("list-item", className);
+
+  const id = Date.now();
 
   return (
     <li className={classes}>
       <Input
         className="list-input"
-        label=""
+        label="item"
         type="checkbox"
         name="list-input"
-        id="list-input"
+        id={`${id}`}
       />
-      {children}
-      <Button className="btn-remove">delete</Button>
+      <Button className="btn-remove">
+        <img src={icon} alt="delete" />
+      </Button>
     </li>
   );
 };

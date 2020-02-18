@@ -13,12 +13,12 @@ type Props = {
 
 const Input: React.FC<Props> = props => {
   const { label, type, name, id, placeholder, className } = props;
-  const classes = classNames("list", className);
+  const classes = classNames("", className);
 
   return (
     <div className={classes}>
-      <label htmlFor={id}>{label}</label>
       <input type={type} name={name} id={id} placeholder={placeholder} />
+      <label htmlFor={id}>{label}</label>
     </div>
   );
 };

@@ -1,0 +1,26 @@
+@import "../../styles/fonts";
+
+.btn {
+  display: inline-block;
+  cursor: pointer;
+  max-width: 100px;
+  width: 100%;
+  text-align: center;
+  background-color: transparent;
+  border: none;
+  outline: none;
+  padding: 10px 0;
+  font-family: "Lato", sans-serif;
+  font-weight: 500;
+  border-radius: 5px;
+  &-success {
+    background-color: #4caf50;
+    color: #fff;
+  }
+  &-remove {
+    margin-left: auto;
+    padding: 0;
+    padding-top: 2px;
+    max-width: 30px;
+  }
+}

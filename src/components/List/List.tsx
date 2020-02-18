@@ -1,5 +1,6 @@
 import React from "react";
 import classNames from "classnames";
+import "./List.scss";
 
 import ListItem from "../ListItem/ListItem";
 
@@ -12,9 +13,9 @@ const List: React.FC<Props> = props => {
   const classes = classNames("list", className);
 
   return (
-    <ul className={classes}>
-      <ListItem>item</ListItem>
-    </ul>
+    <ol className={classes}>
+      <ListItem />
+    </ol>
   );
 };
 

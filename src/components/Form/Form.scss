@@ -1,0 +1,26 @@
+@import "../../styles/fonts";
+
+.form {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  &-input {
+    display: flex;
+    flex-direction: column;
+  }
+  input {
+    width: 360px;
+    padding: 8px 10px;
+    border-radius: 6px;
+    border: 1px solid #c7c7c7;
+    font-size: 16px;
+    font-weight: 500;
+    margin-right: 15px;
+    outline: none;
+    &::placeholder {
+      font-size: 14px;
+      font-weight: 500;
+      color: #636262;
+    }
+  }
+}
