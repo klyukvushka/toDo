@@ -7,26 +7,34 @@ import icon from "../../icons/bin.png";
 
 type Props = {
   className?: string;
+  text: string;
+  id: number;
+  checked: boolean;
 };
 
 const ListItem: React.FC<Props> = props => {
-  const { className } = props;
+  const { className, text, id, checked } = props;
   const classes = classNames("list-item", className);
 
-  const id = Date.now();
+  const handleClick = (event: React.MouseEvent) => {
+    console.log(2);
+  };
 
   return (
-    <li className={classes}>
-      <Input
-        className="list-input"
-        label="item"
-        type="checkbox"
-        name="list-input"
-        id={`${id}`}
-      />
-      <Button className="btn-remove">
-        <img src={icon} alt="delete" />
-      </Button>
+    <li className={`${classes}` + (checked ? "completed" : "")}>
+      <div className="list-content">
+        <Input
+          className="list-input"
+          label={text}
+          type="checkbox"
+          name="list-input"
+          id={`${id}`}
+          checked={checked}
+        />
+        <Button className="btn-remove" onClick={handleClick}>
+          <img src={icon} alt="delete" />
+        </Button>
+      </div>
     </li>
   );
 };
