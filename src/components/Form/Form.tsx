@@ -15,7 +15,7 @@ const Form: React.FC<FormProps> = props => {
   };
 
   const handleKeyPress = (event: React.KeyboardEvent) => {
-    if (event.key === "Enter") {
+    if (title.length > 3 && event.key === "Enter") {
       props.onAdd(title);
       setTitle("");
       event.preventDefault();

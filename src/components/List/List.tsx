@@ -1,38 +1,51 @@
 import React from "react";
 import classNames from "classnames";
+
 import "./List.scss";
 
 import { ITodo } from "../../interfaces/interfaces";
 import ListItem from "../ListItem/ListItem";
+import { useSelector, useDispatch } from "react-redux";
+import { ADD_TODO } from "../../redux/constants";
+import { Task } from "../../redux/types";
 
 type Props = {
   className?: string;
   todos: ITodo[];
 };
 
-const List: React.FC<Props> = props => {
+const addTodo = (task: Task) => ({
+  type: ADD_TODO,
+  payload: task
+});
+
+export const List: React.FC<Props> = props => {
   const { className, todos } = props;
   const classes = classNames("list", className);
+  const tasks = useSelector((state: any) => state.tasks);
 
-  if (todos.length === 0) {
-    return <p className="list-text">There is no todos</p>;
-  }
+  const dispatch = useDispatch();
 
   return (
     <ol className={classes}>
-      {todos.map(todo => {
+      <button
+        onClick={() =>
+          dispatch(addTodo({ id: 1, title: "second todo", completed: false }))
+        }
+      >
+        add add
+      </button>
+      {tasks.items.map((todo: any) => {
         return (
           <ListItem
             className={todo.completed ? "completed" : ""}
-            text={todo.title}
+            title={todo.title}
             id={todo.id}
             key={todo.id}
-            checked={todo.completed}
+            completed={todo.completed}
           />
         );
       })}
     </ol>
   );
 };
-
-export default List;

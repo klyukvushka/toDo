@@ -1,12 +1,12 @@
 import React, { useState } from "react";
 import Title from "../Title/Title";
 import Form from "../Form/Form";
-import List from "../List/List";
+import { List } from "../List/List";
 import { ITodo } from "../../interfaces/interfaces";
 
 import "./App.scss";
 
-const App: React.FC = () => {
+export const App: React.FC = () => {
   const [todos, setTodos] = useState<ITodo[]>([]);
   const addHandler = (title: string) => {
     const newTodo: ITodo = {
@@ -29,5 +29,3 @@ const App: React.FC = () => {
     </main>
   );
 };
-
-export default App;
