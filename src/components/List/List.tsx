@@ -16,17 +16,21 @@ export const List: React.FC<Props> = props => {
 
   return (
     <ol className={classes}>
-      {tasks.items.map((todo: any) => {
-        return (
-          <ListItem
-            className={todo.completed ? "completed" : ""}
-            title={todo.title}
-            id={todo.id}
-            key={todo.id}
-            completed={todo.completed}
-          />
-        );
-      })}
+      {tasks.items.length !== 0 ? (
+        tasks.items.map((todo: any) => {
+          return (
+            <ListItem
+              className={todo.completed ? "completed" : ""}
+              title={todo.title}
+              id={todo.id}
+              key={todo.id}
+              completed={todo.completed}
+            />
+          );
+        })
+      ) : (
+        <p>There is no todos in your list</p>
+      )}
     </ol>
   );
 };

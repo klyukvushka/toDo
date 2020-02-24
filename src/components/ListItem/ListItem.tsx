@@ -24,7 +24,7 @@ const ListItem: React.FC<ITodo> = props => {
   };
 
   return (
-    <li className={`${classes}` + (completed ? " completed" : "")}>
+    <li className={classes}>
       <div className="list-content">
         <Input
           className="list-input"
