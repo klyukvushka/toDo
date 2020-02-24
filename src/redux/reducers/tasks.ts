@@ -1,4 +1,4 @@
-import { ADD_TODO } from "../constants";
+import { ADD_TODO, DELETE_TODO, COMPLETE_TODO } from "../constants";
 import { Task } from "../types";
 
 type TasksStateType = {
@@ -18,6 +18,20 @@ export function tasks(
       return {
         ...state,
         items: [...state.items, action.payload]
+      };
+    }
+    case DELETE_TODO: {
+      return {
+        items: state.items.filter(todo => todo.id !== action.payload)
+      };
+    }
+    case COMPLETE_TODO: {
+      return {
+        items: state.items.map(todo =>
+          todo.id === action.payload
+            ? { ...todo, completed: !todo.completed }
+            : todo
+        )
       };
     }
     default: {
