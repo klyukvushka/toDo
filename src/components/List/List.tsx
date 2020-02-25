@@ -20,7 +20,7 @@ export const List: React.FC<Props> = props => {
         tasks.items.map((todo: any) => {
           return (
             <ListItem
-              className={todo.completed ? "completed" : ""}
+              // className={todo.completed ? "completed" : ""}
               title={todo.title}
               id={todo.id}
               key={todo.id}

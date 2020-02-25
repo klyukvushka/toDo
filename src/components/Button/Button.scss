@@ -3,24 +3,33 @@
 .btn {
   display: inline-block;
   cursor: pointer;
-  max-width: 100px;
   width: 100%;
   text-align: center;
   background-color: transparent;
   border: none;
   outline: none;
   padding: 10px 0;
+  color: #fff;
   font-family: "Lato", sans-serif;
   font-weight: 500;
   border-radius: 5px;
   &-success {
     background-color: #4caf50;
-    color: #fff;
+    max-width: 100px;
   }
   &-remove {
     margin-left: auto;
     padding: 0;
     padding-top: 2px;
     max-width: 30px;
+  }
+  &-completed {
+    max-width: 160px;
+    background-color: blueviolet;
+  }
+  &-delete {
+    max-width: 120px;
+    background-color: rgb(226, 43, 43);
+    margin-left: 10px;
   }
 }
