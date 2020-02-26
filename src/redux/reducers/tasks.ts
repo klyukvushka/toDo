@@ -34,7 +34,7 @@ export function tasks(
     case COMPLETE_TODO: {
       return {
         items: state.items.map(todo =>
-          todo.id === action.payload.id
+          todo.id === action.payload
             ? { ...todo, completed: !todo.completed }
             : todo
         )

@@ -17,9 +17,10 @@ export const removeTodo = (id: number) => ({
   payload: id
 });
 
-export const completeTodo = (id: number) => ({
+export const completeTodo = (id: number, completed: boolean) => ({
   type: COMPLETE_TODO,
-  payload: id
+  payload: id,
+  completed
 });
 
 export const deleteAll = () => ({

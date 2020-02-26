@@ -18,11 +18,11 @@ const ListItem: React.FC<ITodo> = props => {
   };
 
   const handleChange = (event: React.ChangeEvent<HTMLInputElement>) => {
-    dispatch(completeTodo(id));
+    dispatch(completeTodo(id, completed));
   };
 
   return (
-    <li className={`${classes}` + (completed ? "completed" : "")}>
+    <li className={`${classes}` + (completed ? " completed" : "")}>
       <div className="list-content">
         <Input
           className="list-input"
