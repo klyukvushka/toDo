@@ -27,6 +27,7 @@ const ListItem: React.FC<ITodo> = props => {
         <Input
           className="list-input"
           label={title}
+          value={title}
           type="checkbox"
           name="list-input"
           id={`${id}`}

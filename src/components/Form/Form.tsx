@@ -18,15 +18,25 @@ const Form: React.FC = () => {
   const handleKeyPress = (event: React.KeyboardEvent) => {
     if (title.length >= 3 && event.key === "Enter") {
       dispatch(addTodo({ title: title, id: Date.now(), completed: false }));
+      setMessage("");
       setTitle("");
+      event.preventDefault();
+    } else if (title.length < 3 && event.key === "Enter") {
+      setMessage("enter more than 3 symbols");
       event.preventDefault();
     }
   };
 
   const handleClick = (event: React.MouseEvent) => {
-    dispatch(addTodo({ title: title, id: Date.now(), completed: false }));
-    setTitle("");
-    event.preventDefault();
+    if (title.length < 3) {
+      setMessage("enter more than 3 symbols");
+      event.preventDefault();
+    } else {
+      dispatch(addTodo({ title: title, id: Date.now(), completed: false }));
+      setTitle("");
+      setMessage("");
+      event.preventDefault();
+    }
   };
 
   return (
@@ -47,7 +57,7 @@ const Form: React.FC = () => {
           Add
         </Button>
       </form>
-      <p>{message}</p>
+      <p className="message">{message}</p>
     </>
   );
 };

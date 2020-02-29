@@ -51,7 +51,12 @@
     }
   }
 }
-.list-input input:checked + label::after {
+.list-item.completed input:checked + label::after {
   background-image: url("../../icons/check-box.svg");
   background-size: contain;
+}
+
+.message {
+  color: red;
+  text-align: center;
 }
