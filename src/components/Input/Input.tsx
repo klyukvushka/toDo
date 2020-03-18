@@ -1,6 +1,5 @@
 import React from "react";
 import classNames from "classnames";
-import "./Input.scss";
 
 type Props = {
   label: string;

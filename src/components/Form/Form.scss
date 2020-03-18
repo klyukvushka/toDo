@@ -1,4 +1,5 @@
 @import "../../styles/fonts";
+@import "../../styles/mixins";
 
 .form {
   display: flex;
@@ -21,6 +22,10 @@
       font-size: 14px;
       font-weight: 500;
       color: #636262;
+    }
+    @include phone {
+      width: 240px;
+      margin-right: 10px;
     }
   }
 }

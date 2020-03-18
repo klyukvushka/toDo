@@ -1,7 +1,12 @@
 @import "../../styles/fonts";
+@import "../../styles/mixins";
+
 .title {
   font-size: 40px;
   font-weight: bold;
   text-align: center;
   margin-top: 50px;
+  @include phone {
+    font-size: 36px;
+  }
 }
